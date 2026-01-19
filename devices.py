@@ -1,754 +1,98 @@
-DEVICES = [
-    {
-        "SWITCH_IP": "12.0.96.253",
-        "Device_name": "政务外网出口防火墙USG12004-01",
-        "device_type": "huawei",
-        "USERNAME": "libaokui",
-        "PASSWORD": "Wxxcy$%2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.96.254",
-        "Device_name": "政务外网出口防火墙USG12004-02",
-        "device_type": "huawei",
-        "USERNAME": "libaokui",
-        "PASSWORD": "Wxxcy$%2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.96.251",
-        "Device_name": "政务外网管理防火墙-01",
-        "device_type": "huawei",
-        "USERNAME": "libaokui",
-        "PASSWORD": "Wxxcy$%2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.96.252",
-        "Device_name": "政务外网管理防火墙-02",
-        "device_type": "huawei",
-        "USERNAME": "libaokui",
-        "PASSWORD": "Wxxcy$%2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.96.253",
-        "Device_name": "互联网出口防火墙USG12004-01",
-        "device_type": "huawei",
-        "USERNAME": "libaokui",
-        "PASSWORD": "Wxxcy$%2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.96.254",
-        "Device_name": "互联网出口防火墙USG12004-02",
-        "device_type": "huawei",
-        "USERNAME": "libaokui",
-        "PASSWORD": "Wxxcy$%2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.96.251",
-        "Device_name": "互联网管理防火墙-01",
-        "device_type": "huawei",
-        "USERNAME": "libaokui",
-        "PASSWORD": "Wxxcy$%2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.96.252",
-        "Device_name": "互联网管理防火墙-02",
-        "device_type": "huawei",
-        "USERNAME": "libaokui",
-        "PASSWORD": "Wxxcy$%2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.100.2",
-        "Device_name": "政务外网出口路由器NE8000M-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.100.3",
-        "Device_name": "政务外网出口路由器NE8000M-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.100.4",
-        "Device_name": "政务外网数据中心核心CE16808-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.100.5",
-        "Device_name": "政务外网数据中心核心CE16808-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.100.6",
-        "Device_name": "政务外网华三安全资源池接入-01",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.100.7",
-        "Device_name": "政务外网华三安全资源池接入-02",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.2",
-        "Device_name": "政务外网边界网关节点-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.3",
-        "Device_name": "政务外网边界网关节点-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.4",
-        "Device_name": "政务外网L3GW-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.5",
-        "Device_name": "政务外网L3GW-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.6",
-        "Device_name": "政务外网云内核心交换机-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.7",
-        "Device_name": "政务外网云内核心交换机-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.100.2",
-        "Device_name": "互联网出口路由器NE8000M-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.100.3",
-        "Device_name": "互联网出口路由器NE8000M-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.100.4",
-        "Device_name": "互联网数据中心核心CE16808-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.100.5",
-        "Device_name": "互联网数据中心核心CE16808-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.100.6",
-        "Device_name": "互联网华三安全资源池接入-01",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.100.7",
-        "Device_name": "互联网华三安全资源池接入-02",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.2",
-        "Device_name": "互联网边界网关节点-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.3",
-        "Device_name": "互联网边界网关节点-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.4",
-        "Device_name": "互联网L3GW-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.5",
-        "Device_name": "互联网L3GW-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.6",
-        "Device_name": "互联网云内核心交换机-01",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.7",
-        "Device_name": "互联网云内核心交换机-02",
-        "device_type": "huawei",
-        "USERNAME": "huawei",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.12",
-        "Device_name": "政务外网管理区管理接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.13",
-        "Device_name": "政务外网管理区管理接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.14",
-        "Device_name": "政务外网备份接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.15",
-        "Device_name": "政务外网备份接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.16",
-        "Device_name": "政务外网BMC接入交换机S5130（堆叠）",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.17",
-        "Device_name": "政务外网业务汇聚交换机S9850-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.18",
-        "Device_name": "政务外网业务汇聚交换机S9850-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.23",
-        "Device_name": "政务外网网络接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.24",
-        "Device_name": "政务外网网络接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.19",
-        "Device_name": "政务外网业务接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.20",
-        "Device_name": "政务外网业务接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.21",
-        "Device_name": "政务外网计算节点存储接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.22",
-        "Device_name": "政务外网计算节点存储接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.25",
-        "Device_name": "政务外网存储汇聚交换机S9850-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.26",
-        "Device_name": "政务外网存储汇聚交换机S9850-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.27",
-        "Device_name": "政务外网存储前端交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.28",
-        "Device_name": "政务外网存储前端交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.29",
-        "Device_name": "政务外网存储后端交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.30",
-        "Device_name": "政务外网存储后端交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.31",
-        "Device_name": "政务外网OBS接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.32",
-        "Device_name": "政务外网OBS接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.33",
-        "Device_name": "政务外网业务区管理接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.34",
-        "Device_name": "政务外网业务区管理接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.12",
-        "Device_name": "互联网管理区管理接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.13",
-        "Device_name": "互联网管理区管理接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.14",
-        "Device_name": "互联网备份接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.15",
-        "Device_name": "互联网备份接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.16",
-        "Device_name": "互联网BMC接入交换机S5130（堆叠）",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.17",
-        "Device_name": "互联网业务汇聚交换机S9850-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.18",
-        "Device_name": "互联网业务汇聚交换机S9850-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.23",
-        "Device_name": "互联网网络接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.24",
-        "Device_name": "互联网网络接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.19",
-        "Device_name": "互联网业务接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.20",
-        "Device_name": "互联网业务接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.21",
-        "Device_name": "互联网计算节点存储接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.22",
-        "Device_name": "互联网计算节点存储接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.25",
-        "Device_name": "互联网存储汇聚交换机S9850-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.26",
-        "Device_name": "互联网存储汇聚交换机S9850-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.27",
-        "Device_name": "互联网存储前端交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.28",
-        "Device_name": "互联网存储前端交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.29",
-        "Device_name": "互联网存储后端交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.30",
-        "Device_name": "互联网存储后端交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.31",
-        "Device_name": "互联网OBS接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.32",
-        "Device_name": "互联网OBS接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.33",
-        "Device_name": "互联网业务区管理接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.34",
-        "Device_name": "互联网业务区管理接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.35",
-        "Device_name": "互联网管理安全接入交换机S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.36",
-        "Device_name": "互联网管理安全接入交换机S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.100.6",
-        "Device_name": "政务外网安全资源池业务存储接入S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.100.7",
-        "Device_name": "政务外网安全资源池业务存储接入S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.100.6",
-        "Device_name": "互联网安全资源池业务存储接入S6805-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.100.7",
-        "Device_name": "互联网安全资源池业务存储接入S6805-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.10",
-        "Device_name": "政务外网管理汇聚交换机S9850-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.11",
-        "Device_name": "政务外网管理汇聚交换机S9850-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "12.0.99.35",
-        "Device_name": "政务外网BMC接入交换机S5130-3（堆叠）",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    # {
-    #     "SWITCH_IP": "12.0.99.36",
-    #     "Device_name": "政务外网OBS接入交换机S6805-3",
-    #     "device_type": "hp_comware",
-    #     "USERNAME": "h3c",
-    #     "PASSWORD": "Wxxcy#$2025",
-    #     "PORT": 22,
-    # },
-    # {
-    #     "SWITCH_IP": "12.0.99.37",
-    #     "Device_name": "政务外网OBS接入交换机S6805-4",
-    #     "device_type": "hp_comware",
-    #     "USERNAME": "h3c",
-    #     "PASSWORD": "Wxxcy#$2025",
-    #     "PORT": 22,
-    # },
-    {
-        "SWITCH_IP": "11.0.99.10",
-        "Device_name": "互联网管理汇聚交换机S9850-1",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.11",
-        "Device_name": "互联网管理汇聚交换机S9850-2",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.38",
-        "Device_name": "互联网BMC接入交换机S5130-3（堆叠）",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.39",
-        "Device_name": "互联网OBS接入交换机S6805-3",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-    {
-        "SWITCH_IP": "11.0.99.40",
-        "Device_name": "互联网OBS接入交换机S6805-4",
-        "device_type": "hp_comware",
-        "USERNAME": "h3c",
-        "PASSWORD": "Wxxcy#$2025",
-        "PORT": 22,
-    },
-]
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+import openpyxl
+
+_DEFAULT_XLSX_PATH = Path(__file__).with_name("devices.xlsx")
+_DEFAULT_SHEET_NAME = "devices"
+
+_REQUIRED_COLUMNS = ("SWITCH_IP", "USERNAME", "PASSWORD")
+_ALL_COLUMNS = ("SWITCH_IP", "Device_name", "device_type", "USERNAME", "PASSWORD", "PORT")
+
+
+def _normalize_header(value: Any) -> str:
+    return str(value or "").strip()
+
+
+def _to_int(value: Any, default: int) -> int:
+    if value is None or value == "":
+        return default
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        try:
+            return int(float(value))
+        except (TypeError, ValueError):
+            return default
+
+
+def load_devices_from_xlsx(
+    path: Path = _DEFAULT_XLSX_PATH,
+    sheet_name: Optional[str] = _DEFAULT_SHEET_NAME,
+) -> List[Dict[str, Any]]:
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Device inventory file not found: {path}. "
+            f"Please create an Excel file with columns: {', '.join(_ALL_COLUMNS)}"
+        )
+
+    workbook = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    try:
+        if sheet_name and sheet_name in workbook.sheetnames:
+            worksheet = workbook[sheet_name]
+        else:
+            worksheet = workbook.active
+
+        header_row = next(worksheet.iter_rows(min_row=1, max_row=1, values_only=True))
+        headers = [_normalize_header(cell) for cell in header_row]
+
+        col_index: Dict[str, int] = {}
+        for idx, name in enumerate(headers):
+            if not name:
+                continue
+            col_index[name.upper()] = idx
+
+        missing = [c for c in _REQUIRED_COLUMNS if c.upper() not in col_index]
+        if missing:
+            raise ValueError(
+                f"Missing required columns in {path}: {', '.join(missing)}. "
+                f"Found: {', '.join(h for h in headers if h)}"
+            )
+
+        devices: List[Dict[str, Any]] = []
+        for row in worksheet.iter_rows(min_row=2, values_only=True):
+            if not row or all(v is None or v == "" for v in row):
+                continue
+
+            switch_ip = row[col_index["SWITCH_IP"]]
+            if switch_ip is None or str(switch_ip).strip() == "":
+                continue
+
+            device: Dict[str, Any] = {
+                "SWITCH_IP": str(switch_ip).strip(),
+                "USERNAME": str(row[col_index["USERNAME"]] or "").strip(),
+                "PASSWORD": str(row[col_index["PASSWORD"]] or "").strip(),
+            }
+
+            if "DEVICE_NAME" in col_index:
+                device["Device_name"] = str(row[col_index["DEVICE_NAME"]] or "").strip()
+            if "DEVICE_TYPE" in col_index:
+                device["device_type"] = str(row[col_index["DEVICE_TYPE"]] or "").strip()
+            if "PORT" in col_index:
+                device["PORT"] = _to_int(row[col_index["PORT"]], default=22)
+
+            if not device.get("device_type"):
+                device["device_type"] = "huawei"
+            if not device.get("PORT"):
+                device["PORT"] = 22
+
+            devices.append(device)
+
+        return devices
+    finally:
+        workbook.close()
+
+
+DEVICES = load_devices_from_xlsx()
